@@ -11,9 +11,7 @@ export default function App() {
     // si 2eme parametre de useEffect est vide, le callback est lancé une seule fois
     // si 2eme param contient des states, le callback est relancé si un de ces states change
 
-    console.log("je suis chargé")
-
-    fetch(`http://www.omdbapi.com/?apikey=29d469d9&s=${searchTerm || "cat"}`)
+    fetch(`http://www.omdbapi.com/?apikey=5bfa980f&s=${searchTerm || "cat"}`)
       .then((response) => response.json())
       .then((json) => setFilms(json))
 
@@ -33,8 +31,8 @@ export default function App() {
             </li>
           ))}
         </ul>
-        {`year: ${filterYear || "non défini"}`}
-        {/* {filterFilm && <button onClick={() => setFilterFilm()}>Réinitialiser</button>} */}
+        {`Année: ${filterYear || "non défini"}`}
+        {filterYear && <button className="bg-white hover:bg-opacity-80 p-2 rounded-xl mx-9 mb-2"onClick={() => setFilterYear()}>Réinitialiser</button>}
         <input className="mb-6 px-3 py-2 w-full border" type="text" placeholder="Rechercher"
           onChange={event => setSearchTerm(event.target.value)} />
         <div className="grid grid-cols-4 gap-6">
