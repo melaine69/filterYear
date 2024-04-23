@@ -11,7 +11,7 @@ export default function App() {
     // si 2eme parametre de useEffect est vide, le callback est lancé une seule fois
     // si 2eme param contient des states, le callback est relancé si un de ces states change
 
-    fetch(`http://www.omdbapi.com/?apikey=5bfa980f&s=${searchTerm || "cat"}`)
+    fetch(`https://www.omdbapi.com/?apikey=5bfa980f&s=${searchTerm || "cat"}`)
       .then((response) => response.json())
       .then((json) => setFilms(json))
 
